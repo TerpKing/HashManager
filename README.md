@@ -24,7 +24,7 @@ The Hash Management Application is a simple web application built with Flask tha
 
 Install and run:
 
-git clone https://github.com/yourusername/hash-management-app.git
+git clone https://github.com/TerpKing/HashManage.git
 
 cd HashManager
 
