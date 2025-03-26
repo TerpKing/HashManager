@@ -1,0 +1,50 @@
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.logo {
+    width: 100px;
+}
+
+.container {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 15px;  /* Add space below each form */
+}
+
+button, .btn {
+    background-color: #f7a707;  /* Updated to the new color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;  /* Optional: Add rounded corners */
+}
+
+button:hover, .btn:hover {
+    background-color: #d69e06;  /* Darker shade for hover effect */
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li.success {
+    color: green;
+}
+
+.flashes li.error {
+    color: red;
+}
+
+h2 {
+    margin-top: 20px;  /* Add space above the hashes list */
+}
+
+ul {
+    margin-top: 10px;  /* Add space above the list */
+}

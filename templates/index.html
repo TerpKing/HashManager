@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Hash Manager</title>
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/uplift.png') }}" alt="Logo" class="logo">
+        <h1>Hash Manager</h1>
+
+        <form method="POST" action="/add_hash">
+            <input type="text" name="hash_value" placeholder="Enter hash" required>
+            <button type="submit">Add Hash</button>
+        </form>
+
+        <form method="POST" action="/search_hash">
+            <input type="text" name="search_value" placeholder="Search hash" required>
+            <button type="submit">Search Hash</button>
+        </form>
+
+        <form method="POST" action="/compare_hash">
+            <input type="text" name="compare_value" placeholder="Compare hash" required>
+            <button type="submit">Compare Hash</button>
+        </form>
+
+        <h2>Hashes:</h2>
+        <ul>
+            {% for hash in hashes %}
+                <li>{{ hash }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/export_pdf" class="btn">Export to PDF</a>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

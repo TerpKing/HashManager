@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Hash Manager</title>
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/uplift.png') }}" alt="Logo" class="logo">
+        <h1>Hash Manager</h1>
+
+        <form method="POST" action="/add_hash">
+            <input type="text" name="hash_value" placeholder="Enter hash" required>
+            <button type="submit">Add Hash</button>
+        </form>
+
+        <form method="POST" action="/search_hash">
+            <input type="text" name="search_value" placeholder="Search hash" required>
+            <button type="submit">Search Hash</button>
+        </form>
+
+        <form method="POST" action="/compare_two_hashes">
+            <input type="text" name="hash1" placeholder="Enter first hash" required>
+            <input type="text" name="hash2" placeholder="Enter second hash" required>
+            <button type="submit">Compare Two Hashes</button>
+        </form>
+
+        <form method="POST" action="/import_hashes" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".txt" required>
+            <button type="submit">Import Hashes from Text File</button>
+        </form>
+
+        <a href="/export_txt" class="btn">Export to Text File</a>
+
+        <h2>Hashes:</h2>
+        <ul>
+            {% for hash in hashes %}
+                <li>{{ hash }}</li>
+            {% endfor %}
+        </ul>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
