@@ -1,6 +1,6 @@
-# Hash Management Application
+# Hash Manager
 
-The Hash Management Application is a simple web application built with Flask that allows users to manage hashes efficiently. 
+The Hash Manager is a simple web application built with Flask that allows users to manage hashes efficiently. 
 
 - **Add Hashes**: Users can input hash values to add them to the list.
 - **Import Hashes**: Users can upload a text file containing hashes to import them into the application.
@@ -24,7 +24,7 @@ The Hash Management Application is a simple web application built with Flask tha
 
 Install and run:
 
-git clone https://github.com/TerpKing/HashManage.git
+git clone https://github.com/TerpKing/HashManager.git
 
 cd HashManager
 
